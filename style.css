@@ -140,7 +140,8 @@ ul { list-style: none; }
 
 /* ===== HAMBURGER ===== */
 #hamburger-nav {
-  justify-content: flex-end; /* since logo is gone, push icons to the right */
+  justify-content: flex-end;
+  padding-top: 8px;
 }
 
 .hamburger-menu {
