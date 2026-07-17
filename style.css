@@ -140,39 +140,50 @@ ul { list-style: none; }
 
 /* ===== HAMBURGER ===== */
 #hamburger-nav {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  height: var(--nav-h);
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1.5rem;
-  background: var(--nav-bg);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
+  justify-content: flex-end; /* since logo is gone, push icons to the right */
 }
 
-.hamburger-menu { position: relative; }
+.hamburger-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle--mobile {
+  margin-right: 0;
+  width: 38px;
+  height: 38px;
+}
 
 .hamburger-icon {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 20px; width: 28px;
+  justify-content: center;
+  gap: 5px;
+  height: 20px;
+  width: 26px;
   cursor: pointer;
+  padding: 8px;
+  margin: -8px;
 }
 
 .hamburger-icon span {
-  width: 100%; height: 2px;
+  width: 100%;
+  height: 2px;
   background: var(--ink);
-  transition: all 0.3s ease;
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-.hamburger-icon.open span:first-child { transform: rotate(45deg) translate(5px, 6px); }
-.hamburger-icon.open span:nth-child(2) { opacity: 0; }
-.hamburger-icon.open span:last-child { transform: rotate(-45deg) translate(5px, -6px); }
+.hamburger-icon.open span:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-icon.open span:last-child {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 .menu-links {
   position: absolute;
