@@ -1,302 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Awantika Singh — Full Stack Developer portfolio. MCA graduate (2026) building responsive, AI-integrated web applications with React, Node.js, and modern tooling."/>
+  <title>Awantika — Full Stack Developer</title>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23211A2B'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23D9A7C0' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E"/>
+
+  <!-- NOTE: update this URL once the site is deployed -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Awantika Singh — Full Stack Developer"/>
+  <meta property="og:description" content="Full Stack Developer & MCA graduate building AI-integrated web applications with React and Node.js."/>
+  <meta property="og:image" content="./assets/profile2.jpg"/>
+  <meta property="og:url" content="https://your-portfolio-url.com"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Awantika Singh — Full Stack Developer"/>
+  <meta name="twitter:description" content="Full Stack Developer & MCA graduate building AI-integrated web applications with React and Node.js."/>
+  <meta name="twitter:image" content="./assets/profile2.jpg"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+
+  <!-- Link to the separate stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">Awantika</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="hamburger-nav">
-        <div class="logo">Awantika</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-            <ul class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </div>
-        </div>
-    </nav>
-        <section id="profile">
-            <div class="section_pic-container">
-                <img src="./assets/awantika.jpg" alt="Awantika profile picture">
-            </div>
-            <div class="section__text">
-                <p class="section__text__p1">Hello, I am</p>
-                <h1 class="title">Awantika</h1>
-                <p class="section__text__p2">Frontend development</p>
-                <div class="btn-container">
-                    <button class="btn btn-color-2"
-                    onclick="window.open('./assets/Resume Awantika.pdf')"
-                    >Download CV
-                    </button>
-                    <button class="btn btn-color-1"
-                    onclick="location.href='./#contact'"
-                    >Contact info
-                    </button>
-                </div>
-                <div id="social-container">
-                    <img src="./assets/linkedin.png" 
-                    alt="My LinkedIn profile"
-                    class="icon" 
-                    onclick="location.href='https://www.linkedin.com/in/awantika-singh-622a37258'"/>
 
-                    <img src="./assets/github.png" 
-                    alt="My github profile"
-                    class="icon" 
-                    onclick="location.href='https://github.com/Awanihub'"/>
-                </div>
+  <!-- DESKTOP NAV -->
+  <nav id="desktop-nav">
+    <div class="logo">A<span class="logo-dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="theme-icon">🌙</span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <nav id="hamburger-nav">
+    <div class="logo">A<span class="logo-dot">.</span></div>
+    <div class="hamburger-menu">
+      <button class="theme-toggle theme-toggle--mobile" id="theme-toggle-mobile" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <div class="hamburger-icon" id="hamburger-icon" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="menu-links" id="menu-links">
+        <li><a href="#about"      onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
+        <li><a href="#projects"   onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact"    onclick="toggleMenu()">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="profile">
+    <div class="hero-bg-shape"></div>
+    <div class="hero-bg-shape-2"></div>
+    <div class="profile-inner">
+      <div class="hero-text">
+        <p class="hero-greeting">Open to full-stack developer roles</p>
+        <h1 class="hero-name">Awantika<br/><em>Singh</em></h1>
+        <p class="hero-role">Full Stack Developer · MCA Graduate (2026)</p>
+        <p class="hero-desc">
+          I turn slow, manual workflows into fast, AI-assisted tools — most recently cutting resume creation from hours to under 3 seconds.
+        </p>
+        <div class="btn-container">
+          <!-- NOTE: place your PDF at assets/Awantika-Resume.pdf to match this exact filename -->
+          <button class="btn btn-primary" onclick="window.open('./assets/Awantika-Resume.pdf')">
+            Download CV <span class="btn-arrow">↓</span>
+          </button>
+          <button class="btn btn-outline" onclick="location.href='#contact'">
+            Get in Touch
+          </button>
+        </div>
+        <div class="social-row">
+          <a href="https://www.linkedin.com/in/awantika-singh-622a37258" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/Awanihub" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <!-- LeetCode -->
+          <a href="https://leetcode.com/u/Awantika99/" class="social-link" target="_blank" rel="noopener" aria-label="LeetCode">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.535.553-1.386.039-1.901l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.043 10.043c-.965.965-1.478 2.25-1.492 3.629-.001.026-.001.052 0 .078.014 1.379.527 2.664 1.492 3.629l4.363 4.363c.965.965 2.25 1.478 3.629 1.492.026.001.052.001.078 0 1.379-.014 2.664-.527 3.629-1.492l2.639-2.609c.514-.515.497-1.366-.038-1.901-.535-.535-1.386-.553-1.901-.039z"/></svg>
+          </a>
+        </div>
+        <p class="github-stat" id="github-stat"></p>
+      </div>
+      <div class="hero-img-wrap">
+        <div class="img-ring"></div>
+        <img src="./assets/Awantika.png" alt="Awantika Singh" class="hero-img"/>
+        <div class="img-badge">Full Stack Dev</div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll to about">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">Get to know me</div>
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <div class="about-content">
+        <div class="about-cards">
+          <div class="about-card">
+            <div class="about-card-icon">🎓</div>
+            <h3>Education</h3>
+            <p>MCA — MMMUT Gorakhpur, 8.15 CGPA (2024–2026)</p>
+            <p>B.Sc. (Minor: CS) — BHU, 7.92 CGPA (2019–2022)</p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">💻</div>
+            <h3>Experience</h3>
+            <p>Full Stack (MERN) Developer</p>
+            <p>Built scalable REST APIs, JWT-secured auth, and AI-integrated systems through independent and team projects</p>
+          </div>
+        </div>
+        <p class="about-bio">
+                  I'm a full stack developer (MERN) and MCA graduate (2026) who builds production-style systems —
+                  scalable REST APIs, secured authentication, AI-integrated tools — by spotting the one step in a
+                  workflow that's slower than it should be and removing it, using <strong>HTML, CSS, JavaScript, React,</strong> and <strong>Node.js</strong>.
+        </p>
+        <a href="#experience" class="text-link">Explore my skills →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="experience">
+    <div class="section-label">What I know</div>
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skills-col">
+        <h3 class="skills-col-title">Languages</h3>
+        <div class="skill-chip-list">
+          <span class="skill-chip">JavaScript (ES6+)</span>
+          <span class="skill-chip">TypeScript</span>
+          <span class="skill-chip">C++</span>
+          <span class="skill-chip">Java</span>
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">HTML5</span>
+          <span class="skill-chip">CSS3</span>
+          <span class="skill-chip">SQL</span>
+        </div>
+      </div>
+      <div class="skills-col">
+        <h3 class="skills-col-title">Frontend</h3>
+        <div class="skill-chip-list">
+          <span class="skill-chip">React.js</span>
+          <span class="skill-chip">Next.js</span>
+          <span class="skill-chip">Tailwind CSS</span>
+          <span class="skill-chip">Framer Motion</span>
+          <span class="skill-chip">Three.js</span>
+        </div>
+      </div>
+      <div class="skills-col">
+        <h3 class="skills-col-title">Backend &amp; Database</h3>
+        <div class="skill-chip-list">
+          <span class="skill-chip">Node.js</span>
+          <span class="skill-chip">Express.js</span>
+          <span class="skill-chip">REST API Design</span>
+          <span class="skill-chip">JWT Auth</span>
+          <span class="skill-chip">Clerk</span>
+          <span class="skill-chip">MongoDB Atlas</span>
+          <span class="skill-chip">MySQL</span>
+        </div>
+      </div>
+      <div class="skills-col">
+        <h3 class="skills-col-title">AI &amp; Tools</h3>
+        <div class="skill-chip-list">
+          <span class="skill-chip">Gemini API</span>
+          <span class="skill-chip">AI Vision API</span>
+          <span class="skill-chip">Git &amp; GitHub</span>
+          <span class="skill-chip">Postman</span>
+          <span class="skill-chip">VS Code</span>
+          <span class="skill-chip">IntelliJ IDEA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-label">What I've built</div>
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <img src="./assets/project-1.png" alt="Resume Builder and Analyser" class="project-img"/>
+          <div class="project-overlay">
+            <a href="https://hirelogicresume.netlify.app/" class="overlay-btn" target="_blank" rel="noopener">Live Demo</a>
+            <a href="https://github.com/Awanihub" class="overlay-btn secondary" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">Website</span>
+          <h3 class="project-title">Resume Builder &amp; Analyser</h3>
+          <p class="project-desc">Solves slow, manual resume formatting — generates a job-ready resume from structured input in seconds, then scores it against job keywords and flags missing skills so users aren't silently filtered out by ATS bots.</p>
+          <div class="project-links">
+            <a href="https://github.com/Awanihub" class="proj-link" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://hirelogicresume.netlify.app/" class="proj-link" target="_blank" rel="noopener">Live Demo →</a>
+          </div>
+          <details class="case-study">
+            <summary>See case study</summary>
+            <div class="case-study-body">
+              <p><strong>Problem</strong> — students and job seekers were losing hours manually formatting resumes, and many strong candidates were getting filtered out by ATS bots before a human ever saw their application.</p>
+              <p><strong>My role</strong> — led the Gemini API integration and built the interactive UI, working in a team of three.</p>
+              <p><strong>Approach</strong> — streamed structured user input through the Gemini API to auto-generate a formatted resume, added an ATS scoring engine to flag keyword gaps, and wired up one-click PDF export.</p>
+              <p><strong>Outcome</strong> — full resume generation in under 3 seconds with instant ATS feedback, plus a 40% faster initial page load after adding lazy loading and code splitting.</p>
             </div>
-        </section>
-        <section id="about">
-            <p class="section__text__p1">Get to know more</p>
-            <h1 class="title">About me</h1>
-            <div class="section-container">
-                <div class="section_pic-container">
-                    <img src="./assets/aboutawantika.jpg"
-                    alt="profile picture"
-                    class="about-pic"/>
-                </div>
-                <div class="about-details-container">
-                    <div class="about-containers">
-                        <div class="details-container">
-                            <img src="./assets/experience.png"
-                            alt="Experience icon"
-                            class="icon"
-                            />
-                            <h3>Experience</h3>
-                            <p>Fresher<br/>Web full stack development</p>
-                        </div>
-                        <div class="details-container">
-                            <img src="./assets/education.png"
-                            alt="Education icon"
-                            class="icon"/>
-                            <h3>Education</h3>
-                            <p>BSc. Bachelors Degree<br/>MCA Masters of Computer Application</p>
-                        </div>
-                    </div>
-                    <div class="text-container">
-                        <p>I am an aspiring full stack web developer currently pursuing MCA. I enjoy building responsive and interactive websites using HTML, CSS, JavaScript, and React.</p>
-                    </div>
-                </div>
-            </div>
-            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
-                    onclick="location.href='./#experience'"/>
-        </section> 
-        <section id="experience">
-            <p class="section__text__p1">Explore My</p>
-            <h1 class="title">Experience</h1>
-            <div class="experience-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <h2 class="experience-sub-title">Frontend Development</h2>
-                        <div class="article-container">
-                            <article>
-                                <img src="./assets/checkmark.png"
-                                alt= "Experience icon"
-                                class="icon"/>
-                                <div>
-                                    <h3>HTML</h3>
-                                    <p>Experienced</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="./assets/checkmark.png"
-                                alt= "Experience icon"
-                                class="icon"/>
-                                <div>
-                                    <h3>CSS</h3>
-                                    <p>Experienced</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="./assets/checkmark.png"
-                                alt= "Experience icon"
-                                class="icon"/>
-                                <div>
-                                    <h3>Javascript</h3>
-                                    <p>Basic</p>
-                                </div>
-                            </article><article>
-                                <img src="./assets/checkmark.png"
-                                alt= "Experience icon"
-                                class="icon"/>
-                                <div>
-                                    <h3>C++</h3>
-                                    <p>Experienced</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="./assets/checkmark.png"
-                                alt= "Experience icon"
-                                class="icon"/>
-                                <div>
-                                    <h3>JAVA</h3>
-                                    <p>Basic</p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                     <div class="details-container">
-                        <h2 class="experience-sub-title">Frontend Development</h2>
-                        <div class="article-container">
-                            <article>
-                                <img src="./assets/checkmark.png"
-                                alt= "Experience icon"
-                                class="icon"/>
-                                <div>
-                                    <h3>React.js</h3>
-                                    <p>Experienced</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="./assets/checkmark.png"
-                                alt= "Experience icon"
-                                class="icon"/>
-                                <div>
-                                    <h3>Node.js</h3>
-                                    <p>Experienced</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="./assets/checkmark.png"
-                                alt= "Experience icon"
-                                class="icon"/>
-                                <div>
-                                    <h3>Github</h3>
-                                    <p>Basic</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="./assets/checkmark.png"
-                                alt= "Experience icon"
-                                class="icon"/>
-                                <div>
-                                    <h3>DSA</h3>
-                                    <p>Experienced</p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
-                    onclick="location.href='./#projects'"/>
-        </section> s
-        <section id="Projects">
-            <p class="sectiion__text__p1">Browse My Recent</p>
-            <h1 class="title">Projects</h1>
-            <div class="experience-details-container">
-                <div class="about-containers">
-                    <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-1.png" alt="project 1"
-                        class="project-img"/>
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project One</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn"
-                        onclick="location.href='github.com/Awanihub/tic-tac-toe/'">
-                         Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn"
-                        onclick="location.href='https://github.com/'">
-                         Live Demo
-                        </button>    
-                    </div>
-                    </div>
-                    <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-2.png" alt="project 2"
-                        class="project-img"/>
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project Two</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn"
-                        onclick="location.href='https://github.com/'">
-                         Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn"
-                        onclick="location.href='https://github.com/'">
-                         Live Demo
-                        </button>    
-                    </div>
-                    </div>
-                    <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-3.png" alt="project 3"
-                        class="project-img"/>
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project Third</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn"
-                        onclick="location.href='https://github.com/'">
-                         Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn"
-                        onclick="location.href='https://github.com/'">
-                         Live Demo
-                        </button>    
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <img 
-            src="./assets/arrow.png" 
-            alt="Arrow icon" 
-            class="icon arrow"
-            onclick="location.href='./#projects'"/>   
-        </section>
-        <section id="contact">
-            <p class="section__text__p1">Get in Touch</p>
-            <h1 class="title">Contact me</h1>
-            <div class="contact-info-upper-container">
-                <div class="contact-info-container">
-                    <img src="./assets/email.png" 
-                    alt="email icon"
-                    class="icon contact-icon email-icon"/>
-                    <p><a href="mailto:awantikasingh78@gmail.com">awantikasingh78@gmail.com</a></p>
-                </div>
-                <div class="contact-info-container">
-                    <img src="./assets/linkedin.png" 
-                    alt="LinkedIn icon"
-                    class="icon contact-icon linkdIn-icon"/>
-                    <p><a href="https://www.linkedin.com/in/awantika-singh-622a37258">linkedIn</a></p>
-                </div>
-            </div>
-        </section>
-        <footer>
-            <nav>
-                <div class="nav-links-container">
-                    <ul class="nav-links">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <p>Copyright &#169; 2023 Awantika. All right Reserved</p>
-        </footer>
-        <script src="script.js"></script>
-    </body>
+          </details>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <img src="./assets/project-2.png" alt="Plant Identifier App" class="project-img"/>
+          <div class="project-overlay">
+            <!-- PLACEHOLDER: add real links, then remove the disabled class + title attrs -->
+            <a href="#" class="overlay-btn disabled" title="Add your live demo link" onclick="return false;">Live Demo</a>
+            <a href="#" class="overlay-btn secondary disabled" title="Add your GitHub repo link" onclick="return false;">GitHub</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">Web App</span>
+          <h3 class="project-title">Plant Identifier App</h3>
+          <p class="project-desc">Helps people who aren't sure what plant they're looking at or how to care for it — identifies 1000+ species from a photo via an AI Vision API, diagnoses plant diseases through an AI Health Check module, and includes a chatbot for instant plant info plus smart care reminders.</p>
+          <p class="project-metric">1000+ species identified · tested across 3 screen breakpoints</p>
+          <div class="project-links">
+            <a href="#" class="proj-link disabled" title="Add your GitHub repo link" onclick="return false;">GitHub →</a>
+            <a href="#" class="proj-link disabled" title="Add your live demo link" onclick="return false;">Live Demo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img-wrap">
+          <img src="./assets/project-3.jpeg" alt="Distributed File System" class="project-img"/>
+          <div class="project-overlay">
+            <a href="#" class="overlay-btn disabled" title="Add your live demo link" onclick="return false;">Live Demo</a>
+            <a href="#" class="overlay-btn secondary disabled" title="Add your GitHub repo link" onclick="return false;">GitHub</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">System Design</span>
+          <h3 class="project-title">Distributed File System</h3>
+          <p class="project-desc">Tackles the single-point-of-failure problem in file storage — replicates data across nodes and uses consistent hashing so the system keeps serving files even if one node drops.</p>
+          <!-- TODO: replace with a real number, e.g. "tested with 5 nodes, 0 downtime on single-node failure" -->
+          <p class="project-metric">Add a real metric here — node count, downtime tested, etc.</p>
+          <div class="project-links">
+            <a href="#" class="proj-link disabled" title="Add your GitHub repo link" onclick="return false;">GitHub →</a>
+            <a href="#" class="proj-link disabled" title="Add your live demo link" onclick="return false;">Live Demo →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Let's talk</div>
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-box">
+      <p class="contact-intro">Have a project in mind or want to connect? I'd love to hear from you.</p>
+      <div class="contact-methods">
+        <a href="mailto:awantikasingh78@gmail.com" class="contact-method">
+          <div class="contact-method-icon">✉</div>
+          <div>
+            <div class="contact-method-label">Email</div>
+            <div class="contact-method-value">awantikasingh78@gmail.com</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/awantika-singh-622a37258" class="contact-method" target="_blank" rel="noopener">
+          <div class="contact-method-icon">in</div>
+          <div>
+            <div class="contact-method-label">LinkedIn</div>
+            <div class="contact-method-value">Awantika Singh</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">A<span class="logo-dot">.</span></div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© <span id="footer-year"></span> Awantika Singh. All rights reserved. · Last updated <span id="footer-updated"></span></p>
+    </div>
+  </footer>
+
+  <!-- Link to the separate script file -->
+  <script src="script.js"></script>
+</body>
 </html>
