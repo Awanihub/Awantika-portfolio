@@ -140,8 +140,8 @@ ul { list-style: none; }
 
 /* ===== HAMBURGER ===== */
 #hamburger-nav {
-  justify-content: flex-end;
   padding-top: 8px;
+  justify-content: flex-end;
 }
 
 .hamburger-menu {
